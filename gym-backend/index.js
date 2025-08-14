@@ -26,6 +26,13 @@ app.use('/auth', GymRoutes);
 app.use('/plans', MembershipRoutes);
 app.use('/members', MemberRoutes);
 
+app.get('/',(req,res)=>{
+    res.send({
+       activateStatus:true,
+       error:false, 
+    })
+})
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);
